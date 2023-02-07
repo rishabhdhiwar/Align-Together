@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script> 
+var input='s';
+var a='a';
+console.log(a);
+var a = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';
+function isTokenValid(input) {
+  const parts = input.split(".");
+  const payload = atob(parts[1]);
+  const payloadData = JSON.parse(payload);
+  const exp = payloadData.exp;
+  
+  return exp > Date.now() / 1000;
+}
+var b='s';
+var b = isTokenValid(a);
+console.log(b);
+
+
+
+
+</script>
+</html>
